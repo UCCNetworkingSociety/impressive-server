@@ -42,7 +42,7 @@ func (i *retrieveCal) ServeHTTP(resp http.ResponseWriter, req *http.Request) {
 		if err != nil {
 			io.WriteString(resp, "{\"ok\":false, \"error\":\""+err.Error()+"\"}")
 		} else {
-			host := req.Host
+			host := "impressive.netsoc.co"
 			calURL := fmt.Sprintf("http://%s/cal/%s", host, filename)
 			io.WriteString(resp, "{\"ok\":true, \"url\":\""+calURL+"\"}")
 		}
